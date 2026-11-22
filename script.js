@@ -1,0 +1,9 @@
+(function(){
+  [].forEach.call(document.querySelectorAll("[data-open]"),function(b){
+    b.onclick=function(){document.getElementById(b.getAttribute("data-open")).showModal()};
+  });
+  [].forEach.call(document.querySelectorAll(".modal"),function(d){
+    d.querySelector(".x").onclick=function(){d.close()};
+    d.addEventListener("click",function(e){if(e.target===d)d.close()});
+  });
+})();
